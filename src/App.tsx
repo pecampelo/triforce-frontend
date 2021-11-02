@@ -1,14 +1,34 @@
+import React from 'react';
 import './App.css';
 import Button from '@mui/material/Button';
 import '@fontsource/roboto/400.css';
-import { Typography } from '@mui/material';
+import { Table, Typography } from '@mui/material';
+import Header from './Components/Main/Header';
+import DropSelect from './Components/Main/DropSelect';
+import BasicTable from './Components/Main/Table';
 
 function App() {
   return (
     <div className="App">
-     <Button variant="contained"> 
-       <Typography variant='h6' component='h4'> Go </Typography>
-     </Button>
+      <div className='TopBar'></div>
+      <div className='LeftBar'></div>
+      <div className="Main">
+        <div className="LeftInterface">
+          <Header/>
+          <Button variant="outlined">
+            Ver contas
+          </Button>
+          <DropSelect/>
+
+        </div>
+        <div className="RightInterface">
+          <h2>Banco:</h2>
+          <span className='HeaderBank'>Nu Pagamentos S.A</span>
+          <BasicTable/>
+
+        </div>
+      </div>
+      <div className='RightBar'></div>
     </div>
   );
 }

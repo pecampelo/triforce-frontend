@@ -1,24 +1,90 @@
 .App {
-
-  width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
   height: 100vh;
+  display: grid;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  grid-template-columns: minmax(10%, 16%) 2fr minmax(10%, 16%);
+  grid-template-rows: 80px auto 80px;
+}
+
+leftBox {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.29);
+}
+
+.TopBar {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  background-color: #A4F5A4;
+
+}
+
+.LeftBar {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  background-color: #F7F4EC;
+}
+
+.RightBar {
+  grid-column: 3;
+  grid-row: 2 / 4;
+  background-color: #F7F4EC;
+}
+
+.Main {
+  grid-column: 2;
+  grid-row: 2/3;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.LeftInterface, .RightInterface {
   display: flex;
+  flex-direction: column;
+  margin: 110px 120px 60px 50px;
+}
+
+.LeftInterface {
+  grid-column: 1 / 1;
+  font-size: 1.8rem;
   align-items: center;
-  justify-content: center;
-
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header {
+  margin-bottom: 80px;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.HeaderBank {
+  font-size: 35pt;
+  line-height: 0.8;
+  margin-bottom: 40px;
+}
+
+.RightInterface {
+  grid-column: 2 / 2;
+}
+
+
+@media screen and (max-width: 1140px) {
+  .Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+
 }
